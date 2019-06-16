@@ -1,12 +1,12 @@
 import React from 'react';
-import { Component } from 'react';
-import './App.css';
+import QuakeCard from './QuakeCard'
 
 const QuakesList = (props) => {
 
   const quakeCards = props.quakes.map(quake => {
     return(
-      <p>{quake.properties.mag} - {quake.properties.place}</p>
+      // <p>{quake.properties.mag} - {quake.properties.place}</p>
+      <QuakeCard quake={quake.properties} />
     );
   });
 

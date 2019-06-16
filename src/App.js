@@ -40,7 +40,6 @@ class App extends Component {
           <div className="col-md-6">
             <div id="info">
               <h1>Recent Earthquakes</h1>
-              <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p>
               <QuakesList quakes={this.state.quakes} />
             </div>
           </div>
