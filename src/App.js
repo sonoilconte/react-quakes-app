@@ -13,6 +13,7 @@ class App extends Component {
       currentQuake: ''
     };
     this.fetchQuakesData();
+    this.selectCurrentQuake = this.selectCurrentQuake.bind(this);
   }
 
   fetchQuakesData() {
@@ -29,6 +30,11 @@ class App extends Component {
     });
   }
 
+  selectCurrentQuake(currentQuake) {
+    console.log('selecting current quake ', currentQuake);
+    this.setState({ currentQuake });
+  }
+
   render() {
     return (
       <div className="container">
@@ -39,7 +45,10 @@ class App extends Component {
           <div className="col-md-4">
             <div id="info">
               <h1>Recent Earthquakes</h1>
-              <QuakesList quakes={this.state.quakes} />
+              <QuakesList
+                quakes={this.state.quakes}
+                selectCurrentQuake={this.selectCurrentQuake}
+              />
             </div>
           </div>
         </div>

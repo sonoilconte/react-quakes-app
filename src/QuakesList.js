@@ -5,7 +5,11 @@ const QuakesList = (props) => {
 
   const quakeCards = props.quakes.map(quake => {
     return(
-      <QuakeCard quake={quake.properties} />
+      <QuakeCard
+        key={quake.id}
+        quake={quake}
+        selectCurrentQuake={props.selectCurrentQuake}
+      />
     );
   });
 
