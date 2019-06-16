@@ -34,7 +34,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-8">
-            <Map />
+            <Map quakes={this.state.quakes} />
           </div>
           <div className="col-md-4">
             <div id="info">

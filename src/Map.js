@@ -14,10 +14,21 @@ class Map extends Component {
   };
 
   render() {
+
+    const markers = this.props.quakes.map(quake => {
+      const coordinates = quake.geometry.coordinates;
+      return (
+        <Marker
+          lat={coordinates[1]}
+          lng={coordinates[0]}
+        />
+      );
+    });
+
     return(
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
-          <Marker lat={43} lng={-121}/>
+          {markers}
         </GoogleMapReact>
       </div>
     );
