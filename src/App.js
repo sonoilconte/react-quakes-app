@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import './App.css';
 import QuakesList from './QuakesList';
+import Map from './Map';
 
 class App extends Component {
 
@@ -32,12 +33,10 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
-            <div id="map">
-
-            </div>
+          <div className="col-md-8">
+            <Map />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div id="info">
               <h1>Recent Earthquakes</h1>
               <QuakesList quakes={this.state.quakes} />
