@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const Marker = () => 'M';
+const Marker = () => {
+  return(
+    <img
+      src={process.env.PUBLIC_URL + '/images/earthquake.png'}
+      style={{ width: '30px' }}
+      alt={'M'}
+    />
+  );
+};
 
 class Map extends Component {
 
@@ -34,8 +42,14 @@ class Map extends Component {
       );
     });
 
+    const mapStyles = {
+      height: '80vh',
+      width: '100%',
+      'margin-top': '30px'
+    };
+
     return(
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div style={ mapStyles }>
         <GoogleMapReact
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}

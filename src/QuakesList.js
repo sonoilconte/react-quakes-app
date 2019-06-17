@@ -14,7 +14,9 @@ const QuakesList = (props) => {
   });
 
   return(
-    quakeCards
+    <div style={{ height: '80vh', 'overflow': 'hidden', 'overflow-y': 'scroll' }}>
+    {quakeCards}
+    </div>
   );
 
 };
