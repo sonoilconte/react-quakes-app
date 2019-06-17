@@ -7,15 +7,24 @@ class Map extends Component {
 
   static defaultProps = {
     center: {
-      lat: 43,
-      lng: -121
+      lat: 16.847694,
+      lng: -94.343113
     },
-    zoom: 11
+    zoom: 4
   };
 
   render() {
 
-    const markers = this.props.quakes.map(quake => {
+    const quakesToRender = this.props.currentQuake === '' ?
+      this.props.quakes : [this.props.currentQuake];
+
+    const center = this.props.currentQuake === '' ?
+      this.props.center : {
+        lat: this.props.currentQuake.geometry.coordinates[1],
+        lng: this.props.currentQuake.geometry.coordinates[0]
+      };
+
+    const markers = quakesToRender.map(quake => {
       const coordinates = quake.geometry.coordinates;
       return (
         <Marker
@@ -27,7 +36,11 @@ class Map extends Component {
 
     return(
       <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+        <GoogleMapReact
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+          center={center}
+        >
           {markers}
         </GoogleMapReact>
       </div>

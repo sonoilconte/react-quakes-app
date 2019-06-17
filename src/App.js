@@ -40,7 +40,10 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-8">
-            <Map quakes={this.state.quakes} />
+            <Map
+              quakes={this.state.quakes}
+              currentQuake={this.state.currentQuake}
+            />
           </div>
           <div className="col-md-4">
             <div id="info">
