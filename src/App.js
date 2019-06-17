@@ -3,6 +3,7 @@ import { Component } from 'react';
 import './App.css';
 import QuakesList from './QuakesList';
 import Map from './Map';
+import QuakeInfo from './QuakeInfo';
 
 class App extends Component {
 
@@ -42,6 +43,9 @@ class App extends Component {
           <div className="col-md-8">
             <Map
               quakes={this.state.quakes}
+              currentQuake={this.state.currentQuake}
+            />
+            <QuakeInfo
               currentQuake={this.state.currentQuake}
             />
           </div>

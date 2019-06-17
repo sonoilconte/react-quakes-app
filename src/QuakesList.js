@@ -1,5 +1,5 @@
 import React from 'react';
-import QuakeCard from './QuakeCard'
+import QuakeCard from './QuakeCard';
 
 const QuakesList = (props) => {
 
